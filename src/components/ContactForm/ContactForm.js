@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { nanoid } from 'nanoid'
 import './ContactForm.css';
 
 
@@ -24,7 +25,7 @@ class ContactForm extends Component {
     const newContact = {
       name: name,
       number: number,
-      id: number
+      id: nanoid()
     }
 
     this.props.addContact(newContact)
