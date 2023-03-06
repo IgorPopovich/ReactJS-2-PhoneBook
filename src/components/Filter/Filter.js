@@ -1,4 +1,4 @@
-import './Filter.css';
+import css from './Filter.module.css';
 
 const Filter = ({ value, onChange }) => {
     return (
@@ -6,7 +6,7 @@ const Filter = ({ value, onChange }) => {
         Find contacts by name
         <input
             onChange={ onChange }
-            className='value'
+            className={css.value}
             type="text"
             value={value}
             name="name"
