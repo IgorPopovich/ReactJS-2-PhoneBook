@@ -5,7 +5,6 @@ import Filter from './Filter/Filter';
 import css from './App.module.css';
 import PropTypes from 'prop-types';
 
-
 class App extends Component {
 
   state = {
@@ -26,11 +25,10 @@ class App extends Component {
   }
 
   handleSubmitForm = (data) => {
-    for (let a of this.state.contacts) {
-      if (a.name.includes(data.name)) {
+    const { contacts } = this.state;
+    if (contacts.find(contact => contact.name.toLowerCase() === data.name.toLowerCase())) {
         alert(`${data.name} is already in contacts`)
         return;
-      }
     }
       this.setState(prevState => ({
         contacts: [data, ...prevState.contacts],
